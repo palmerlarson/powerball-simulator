@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>POWERBALL SIMULATOR</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <section class="powerballs">
+            <div class="numbers">
+                <div id="num1" class="ballNum"></div>
+                <div id="num2" class="ballNum"></div>
+                <div id="num3" class="ballNum"></div>
+                <div id="num4" class="ballNum"></div>
+                <div id="num5" class="ballNum"></div>
+                <div id="num6" class="ballNum"></div>
+            </div>
+
+            <div class="numbers">
+                <div id="pnum1" class="ballNum"></div>
+                <div id="pnum2" class="ballNum"></div>
+                <div id="pnum3" class="ballNum"></div>
+                <div id="pnum4" class="ballNum"></div>
+                <div id="pnum5" class="ballNum"></div>
+                <div id="pnum6" class="ballNum"></div>
+            </div>
+
+            <div class="inputNumber">
+                    <input type="number" name="ball1Input" id="ball1Input" class="ballsInput">
+                    <input type="number" name="ball1Input" id="ball2Input" class="ballsInput">
+                    <input type="number" name="ball1Input" id="ball3Input" class="ballsInput">
+                    <input type="number" name="ball1Input" id="ball4Input" class="ballsInput">
+                    <input type="number" name="ball1Input" id="ball5Input" class="ballsInput">
+                    <input type="number" name="ball1Input" id="ball6Input" class="ballsInput">
+                    <button onclick="playerInput()">Lock In</button>
+            </div>
+
+            <div class="play">
+                <button onclick="run()">PLAY</button>
+                <button onclick="reset()">RESET</button>
+            </div>
+        </section>
+        <script src="script.js" async defer></script>
+    </body>
+</html>
