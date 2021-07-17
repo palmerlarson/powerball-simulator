@@ -1,4 +1,5 @@
 const playerBalls = [];
+
 //get a random number
 const getBallNumber = () => {
     let n = Math.floor(Math.random() * 69 + 1);
@@ -24,6 +25,7 @@ const getTheBalls = () => {
 const displayBalls = () => {
     checkNumber()
     const ballArray = getTheBalls();
+    prizeChecker(ballArray, playerBalls);
     //rolled balls
     const ball1 = document.getElementById("num1");
     const ball2 = document.getElementById("num2");
@@ -49,12 +51,12 @@ const displayBalls = () => {
     let pwrBall6 = ballArray[5];
 
     //assigning player balls to variables
-    let playerBall1 = playerBallArr[0];
-    let playerBall2 = playerBallArr[1];
-    let playerBall3 = playerBallArr[2];
-    let playerBall4 = playerBallArr[3];
-    let playerBall5 = playerBallArr[4];
-    let playerBall6 = playerBallArr[5];
+    let playerBall1 = playerBalls[0];
+    let playerBall2 = playerBalls[1];
+    let playerBall3 = playerBalls[2];
+    let playerBall4 = playerBalls[3];
+    let playerBall5 = playerBalls[4];
+    let playerBall6 = playerBalls[5];
 
 
     //displaying rolled balls
@@ -66,12 +68,12 @@ const displayBalls = () => {
     ball6.innerHTML = `<p>${pwrBall6}</p>`;
 
     //displaying player balls
-    pball1.innerHTML = `<p>${playerBall1}</p>`;
-    pball2.innerHTML = `<p>${playerBall2}</p>`;
-    pball3.innerHTML = `<p>${playerBall3}</p>`;
-    pball4.innerHTML = `<p>${playerBall4}</p>`;
-    pball5.innerHTML = `<p>${playerBall5}</p>`;
-    pball6.innerHTML = `<p>${playerBall6}</p>`;
+    pBall1.innerHTML = `<p>${playerBall1}</p>`;
+    pBall2.innerHTML = `<p>${playerBall2}</p>`;
+    pBall3.innerHTML = `<p>${playerBall3}</p>`;
+    pBall4.innerHTML = `<p>${playerBall4}</p>`;
+    pBall5.innerHTML = `<p>${playerBall5}</p>`;
+    pBall6.innerHTML = `<p>${playerBall6}</p>`;
 }
 
 const playerInput = () => {
@@ -137,6 +139,49 @@ const checkNumber = () => {
 
 }
 
+const prizeChecker = (powerballArr, playerArr) => {
+    let matches = 0;
+    let powerball = false;
+    let prize = 0;
+
+    //checks normal balls
+    for(i=0; i < 5; i++) {
+        if (powerballArr[i] === playerArr[i]) {
+            matches+=1;
+        }
+    }
+
+    //checks power ball
+    if (powerballArr[5] === playerArr[5]) {
+        powerball = true;
+    }
+
+    //determining prize money
+    if (matches === 0 && powerball === true) {
+        prize = 4;
+    } else if (matches === 1 && powerball === true) {
+        prize = 4;
+    } else if (matches === 2 && powerball === true) {
+        prize = 7;
+    } else if (matches === 3 && powerball === false) {
+        prize = 7;
+    } else if (matches === 3 && powerball === true) {
+        prize = 100;
+    } else if (matches === 4 && powerball === false) {
+        prize = 100;
+    } else if (matches === 4 && powerball === true) {
+        prize = 50000;
+    } else if (matches === 5 && powerball === false) {
+        prize = 1000000;
+    } else if (matches === 5 && powerball === true) {
+        prize = 150000000;
+    } else {
+        prize = 0;
+    }
+
+    return prize;
+}
+
 const run = () => {
-    console.log(playerBalls);
+    displayBalls();
 }
