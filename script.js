@@ -1,4 +1,5 @@
-const playerBalls = [];
+let playerBalls = [];
+let playerMoney = 100;
 
 //get a random number
 const getBallNumber = () => {
@@ -25,7 +26,7 @@ const getTheBalls = () => {
 const displayBalls = () => {
     checkNumber()
     const ballArray = getTheBalls();
-    prizeChecker(ballArray, playerBalls);
+    let prize = prizeChecker(ballArray, playerBalls);
     //rolled balls
     const ball1 = document.getElementById("num1");
     const ball2 = document.getElementById("num2");
@@ -74,6 +75,13 @@ const displayBalls = () => {
     pBall4.innerHTML = `<p>${playerBall4}</p>`;
     pBall5.innerHTML = `<p>${playerBall5}</p>`;
     pBall6.innerHTML = `<p>${playerBall6}</p>`;
+
+    //player money
+    const playerMoneyEl = document.getElementById("playMoney");
+    playerMoney-=2;
+    playerMoney+=prize;
+    playerMoneyEl.innerHTML = `Player Money: ${playerMoney}`;
+    
 }
 
 const playerInput = () => {
@@ -136,6 +144,7 @@ const checkNumber = () => {
         alert("You can't have a number less than 1 or more than 26 for you powerball. READ THE RULES!");
         reset();
     }
+  
 
 }
 
@@ -143,6 +152,8 @@ const prizeChecker = (powerballArr, playerArr) => {
     let matches = 0;
     let powerball = false;
     let prize = 0;
+    powerballArr = powerballArr.map(Number);
+    playerArr = playerArr.map(Number);
 
     //checks normal balls
     for(i=0; i < 5; i++) {
@@ -185,3 +196,4 @@ const prizeChecker = (powerballArr, playerArr) => {
 const run = () => {
     displayBalls();
 }
+

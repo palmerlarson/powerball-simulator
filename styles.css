@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+}
+
+.powerBallHeading, .playerNumHeading {
+    text-align: center;
+}
+
+
+.numbers {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    background-color: aqua;
+}
+
+.pnumbers {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    background-color: aqua;
+    margin-bottom: 50px;
+}
+
+.ballNum {
+    flex: 1;
+    border: 1px solid red;
+}
+
+.inputNumber {
+    text-align: center;
+}
+
+.playerMoney, .play {
+    text-align: center;
+}
+
+.ballsInput {
+    width: 50px;
+}

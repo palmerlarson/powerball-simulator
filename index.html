@@ -9,32 +9,38 @@
     </head>
     <body>
         <section class="powerballs">
+            <h1 class="powerBallHeading">PowerBall Numbers:</h1>
             <div class="numbers">
-                <div id="num1" class="ballNum"></div>
-                <div id="num2" class="ballNum"></div>
-                <div id="num3" class="ballNum"></div>
-                <div id="num4" class="ballNum"></div>
-                <div id="num5" class="ballNum"></div>
-                <div id="num6" class="ballNum"></div>
+                <div id="num1" class="ballNum"><p class="holder">-</p></div>
+                <div id="num2" class="ballNum"><p class="holder">-</p></div>
+                <div id="num3" class="ballNum"><p class="holder">-</p></div>
+                <div id="num4" class="ballNum"><p class="holder">-</p></div>
+                <div id="num5" class="ballNum"><p class="holder">-</p></div>
+                <div id="num6" class="ballNum"><p class="holder">-</p></div>
             </div>
 
-            <div class="numbers">
-                <div id="pnum1" class="ballNum"></div>
-                <div id="pnum2" class="ballNum"></div>
-                <div id="pnum3" class="ballNum"></div>
-                <div id="pnum4" class="ballNum"></div>
-                <div id="pnum5" class="ballNum"></div>
-                <div id="pnum6" class="ballNum"></div>
+            <h1 class="playerNumHeading">Player Numbers:</h1>
+            <div class="pnumbers">
+                <div id="pnum1" class="ballNum"><p class="holder">-</p></div>
+                <div id="pnum2" class="ballNum"><p class="holder">-</p></div>
+                <div id="pnum3" class="ballNum"><p class="holder">-</p></div>
+                <div id="pnum4" class="ballNum"><p class="holder">-</p></div>
+                <div id="pnum5" class="ballNum"><p class="holder">-</p></div>
+                <div id="pnum6" class="ballNum"><p class="holder">-</p></div>
             </div>
 
             <div class="inputNumber">
                     <input type="number" name="ball1Input" id="ball1Input" class="ballsInput">
-                    <input type="number" name="ball1Input" id="ball2Input" class="ballsInput">
-                    <input type="number" name="ball1Input" id="ball3Input" class="ballsInput">
-                    <input type="number" name="ball1Input" id="ball4Input" class="ballsInput">
-                    <input type="number" name="ball1Input" id="ball5Input" class="ballsInput">
-                    <input type="number" name="ball1Input" id="ball6Input" class="ballsInput">
+                    <input type="number" name="ball2Input" id="ball2Input" class="ballsInput">
+                    <input type="number" name="ball3Input" id="ball3Input" class="ballsInput">
+                    <input type="number" name="ball4Input" id="ball4Input" class="ballsInput">
+                    <input type="number" name="ball5Input" id="ball5Input" class="ballsInput">
+                    <input type="number" name="ball6Input" id="ball6Input" class="ballsInput">
                     <button onclick="playerInput()">Lock In</button>
+            </div>
+
+            <div class="playerMoney">
+                <p class="pMoney" id="playMoney">Player Money: 100</p>
             </div>
 
             <div class="play">
