@@ -29,6 +29,8 @@
 .ballNum {
     flex: 1;
     border: 1px solid red;
+    border-radius: 500px;
+    height: 70px;
 }
 
 .inputNumber {

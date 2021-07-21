@@ -115,6 +115,21 @@ const reset = () => {
     const pball5 = document.getElementById("ball5Input");
     const pball6 = document.getElementById("ball6Input");
 
+    const ball1 = document.getElementById("num1");
+    const ball2 = document.getElementById("num2");
+    const ball3 = document.getElementById("num3");
+    const ball4 = document.getElementById("num4");
+    const ball5 = document.getElementById("num5");
+    const ball6 = document.getElementById("num6");
+
+    //player balls
+    const playBall1 = document.getElementById("pnum1");
+    const playBall2 = document.getElementById("pnum2");
+    const playBall3 = document.getElementById("pnum3");
+    const playBall4 = document.getElementById("pnum4");
+    const playBall5 = document.getElementById("pnum5");
+    const playBall6 = document.getElementById("pnum6");
+
     pball1.disabled = false;
     pball2.disabled = false;
     pball3.disabled = false;
@@ -128,6 +143,22 @@ const reset = () => {
     pball4.value = '';
     pball5.value = '';
     pball6.value = '';
+
+    //displaying rolled balls
+    ball1.innerHTML = `<p>-</p>`;
+    ball2.innerHTML = `<p>-</p>`;
+    ball3.innerHTML = `<p>-</p>`;
+    ball4.innerHTML = `<p>-</p>`;
+    ball5.innerHTML = `<p>-</p>`;
+    ball6.innerHTML = `<p>-</p>`;
+
+    //displaying player balls
+    playBall1.innerHTML = `<p>-</p>`;
+    playBall2.innerHTML = `<p>-</p>`;
+    playBall3.innerHTML = `<p>-</p>`;
+    playBall4.innerHTML = `<p>-</p>`;
+    playBall5.innerHTML = `<p>-</p>`;
+    playBall6.innerHTML = `<p>-</p>`;
 
     playerBalls = [];
 }
