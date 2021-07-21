@@ -164,31 +164,50 @@ const reset = () => {
 }
 
 const checkNumber = () => {
-    for(i=0; i < 5; i++) {
+    for(let i=0; i < 5; i++) {
         if (playerBalls[i] < 1 || playerBalls[i] > 69) {
             alert("You can't have a number less than 1 or greater than 69 in your first 5 balls. READ THE RULES!");
             reset();
         }
     }
 
-    if (playerBalls[i] < 1 || playerBalls[i] > 26) {
+    if (playerBalls[5] < 1 || playerBalls[5] > 26) {
         alert("You can't have a number less than 1 or more than 26 for you powerball. READ THE RULES!");
         reset();
     }
-  
+
+    //a primitive way of finding dupes lol
+    let arrMinusPball = [];
+    arrMinusPball.push(playerBalls[0], playerBalls[1], playerBalls[2], playerBalls[3], playerBalls[4]);
+    let duplicateChecker = checkIfDuplicateExists(arrMinusPball);
+
+    if (duplicateChecker === true) {
+        alert("You done put in a duplicate number. READ THE RULES!");
+        reset();
+    }
 
 }
 
+//checks for matches and awards prizes
 const prizeChecker = (powerballArr, playerArr) => {
     let matches = 0;
     let powerball = false;
     let prize = 0;
     powerballArr = powerballArr.map(Number);
     playerArr = playerArr.map(Number);
+    const wins = document.getElementById("winsId");
 
     //checks normal balls
     for(i=0; i < 5; i++) {
-        if (powerballArr[i] === playerArr[i]) {
+        if (powerballArr[i] === playerArr[0]) {
+            matches+=1;
+        } else if (powerballArr[i] === playerArr[1]) {
+            matches+=1;
+        } else if (powerballArr[i] === playerArr[2]) {
+            matches+=1;
+        } else if (powerballArr[i] === playerArr[3]) {
+            matches+=1;
+        } else if (powerballArr[i] === playerArr[4]) {
             matches+=1;
         }
     }
@@ -201,30 +220,45 @@ const prizeChecker = (powerballArr, playerArr) => {
     //determining prize money
     if (matches === 0 && powerball === true) {
         prize = 4;
+        wins.innerHTML += `<p class="winsRow">You matched the Powerball! You won $4!</p>`;
     } else if (matches === 1 && powerball === true) {
         prize = 4;
+        wins.innerHTML += `<p class="winsRow">You matched 1 number and the Powerball! You won $4!</p>`;
     } else if (matches === 2 && powerball === true) {
         prize = 7;
+        wins.innerHTML += `<p class="winsRow">You matched 2 numbers and the Powerball! You won $7!</p>`;
     } else if (matches === 3 && powerball === false) {
         prize = 7;
+        wins.innerHTML += `<p class="winsRow">You matched 3 numbers! You won $7!</p>`;
     } else if (matches === 3 && powerball === true) {
         prize = 100;
+        wins.innerHTML += `<p class="winsRow">You matched 3 numbers and the Powerball! You won $100!</p>`;
     } else if (matches === 4 && powerball === false) {
         prize = 100;
+        wins.innerHTML += `<p class="winsRow">You matched 4 numbers! You won $100!</p>`;
     } else if (matches === 4 && powerball === true) {
         prize = 50000;
+        wins.innerHTML += `<p class="winsRow">You matched 4 numbers and the Powerball! You won $50,000!</p>`;
     } else if (matches === 5 && powerball === false) {
         prize = 1000000;
+        wins.innerHTML += `<p class="winsRow">You matched 5 numbers! You won $100,000!</p>`;
     } else if (matches === 5 && powerball === true) {
         prize = 150000000;
+        wins.innerHTML += `<p class="winsRow">You matched 5 numbers and the Powerball, JACKPOT! You won $150,000,000!</p>`;
     } else {
         prize = 0;
+        wins.innerHTML += `<p class="winsRow">You didn't win shit.</p>`;    
     }
 
     return prize;
 }
 
+//play button runs the program
 const run = () => {
     displayBalls();
 }
 
+//function check for dupes
+function checkIfDuplicateExists(w){
+    return new Set(w).size !== w.length 
+}
