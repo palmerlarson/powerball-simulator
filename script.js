@@ -247,7 +247,6 @@ const prizeChecker = (powerballArr, playerArr) => {
         wins.innerHTML += `<p class="winsRow">You matched 5 numbers and the Powerball, JACKPOT! You won $150,000,000!</p>`;
     } else {
         prize = 0;
-        wins.innerHTML += `<p class="winsRow">You didn't win shit.</p>`;    
     }
 
     return prize;

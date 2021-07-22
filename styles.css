@@ -44,3 +44,9 @@
 .ballsInput {
     width: 50px;
 }
+
+.rules {
+    float: right;
+    margin-right: 10%;
+    margin-top: 2%;
+}
