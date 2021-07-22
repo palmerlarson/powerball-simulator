@@ -6,27 +6,30 @@
         <title>POWERBALL SIMULATOR</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
     </head>
     <body>
         <section class="powerballs">
             <h1 class="powerBallHeading">PowerBall Numbers:</h1>
             <div class="numbers">
-                <div id="num1" class="ballNum"><p class="holder">-</p></div>
-                <div id="num2" class="ballNum"><p class="holder">-</p></div>
-                <div id="num3" class="ballNum"><p class="holder">-</p></div>
-                <div id="num4" class="ballNum"><p class="holder">-</p></div>
-                <div id="num5" class="ballNum"><p class="holder">-</p></div>
-                <div id="num6" class="ballNum"><p class="holder">-</p></div>
+                <div id="num1" class="ballNum imgBall"><p class="holder"></p></div>
+                <div id="num2" class="ballNum imgBall"><p class="holder"></p></div>
+                <div id="num3" class="ballNum imgBall"><p class="holder"></p></div>
+                <div id="num4" class="ballNum imgBall"><p class="holder"></p></div>
+                <div id="num5" class="ballNum imgBall"><p class="holder"></p></div>
+                <div id="num6" class="ballNum powerballimg"><p class="holderP"></p></div>
             </div>
 
             <h1 class="playerNumHeading">Player Numbers:</h1>
             <div class="pnumbers">
-                <div id="pnum1" class="ballNum"><p class="holder">-</p></div>
-                <div id="pnum2" class="ballNum"><p class="holder">-</p></div>
-                <div id="pnum3" class="ballNum"><p class="holder">-</p></div>
-                <div id="pnum4" class="ballNum"><p class="holder">-</p></div>
-                <div id="pnum5" class="ballNum"><p class="holder">-</p></div>
-                <div id="pnum6" class="ballNum"><p class="holder">-</p></div>
+                <div id="pnum1" class="ballNum imgBall"><p class="holder"></p></div>
+                <div id="pnum2" class="ballNum imgBall"><p class="holder"></p></div>
+                <div id="pnum3" class="ballNum imgBall"><p class="holder"></p></div>
+                <div id="pnum4" class="ballNum imgBall"><p class="holder"></p></div>
+                <div id="pnum5" class="ballNum imgBall"><p class="holder"></p></div>
+                <div id="pnum6" class="ballNum powerballimg"><p class="holderP"></p></div>
             </div>
 
             <div class="inputNumber">
@@ -40,7 +43,7 @@
             </div>
 
             <div class="playerMoney">
-                <p class="pMoney" id="playMoney">Player Money: 100</p>
+                <p class="pMoney" id="playMoney">Player Money: $100</p>
             </div>
 
             <div class="play">
@@ -48,15 +51,20 @@
                 <button onclick="reset()">RESET</button>
             </div>
 
-            <div class="wins" id="winsId">
+            <div class="container">
+                <div class="wins" id="winsId">
+                    <h2 class="winsHeading">Wins:</h2>
             </div>
 
             <div class="rules">
+                <h2 class="rulesHeading">Rules:</h2>
                 <ul class="rulesList">
                     <li>You must pick a number between 1 and 69 for the first five picks.</li>
                     <li>You must pick a number between 1 and 26 for the PowerBall.</li>
                     <li>It costs $2 to play.</li>
                     <li>Playing without picking or picking out of the given contraints will forfeit your $2.</li>
+                    <li>You MUST lock in.</li>
+                    <li>You can click play as many times as you want once you're locked in.</li>
                 </ul>
             </div>
         </section>

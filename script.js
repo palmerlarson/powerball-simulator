@@ -61,26 +61,26 @@ const displayBalls = () => {
 
 
     //displaying rolled balls
-    ball1.innerHTML = `<p>${pwrBall1}</p>`;
-    ball2.innerHTML = `<p>${pwrBall2}</p>`;
-    ball3.innerHTML = `<p>${pwrBall3}</p>`;
-    ball4.innerHTML = `<p>${pwrBall4}</p>`;
-    ball5.innerHTML = `<p>${pwrBall5}</p>`;
-    ball6.innerHTML = `<p>${pwrBall6}</p>`;
+    ball1.innerHTML = `<p class="holder">${pwrBall1}</p>`;
+    ball2.innerHTML = `<p class="holder">${pwrBall2}</p>`;
+    ball3.innerHTML = `<p class="holder">${pwrBall3}</p>`;
+    ball4.innerHTML = `<p class="holder">${pwrBall4}</p>`;
+    ball5.innerHTML = `<p class="holder">${pwrBall5}</p>`;
+    ball6.innerHTML = `<p class="holderP">${pwrBall6}</p>`;
 
     //displaying player balls
-    pBall1.innerHTML = `<p>${playerBall1}</p>`;
-    pBall2.innerHTML = `<p>${playerBall2}</p>`;
-    pBall3.innerHTML = `<p>${playerBall3}</p>`;
-    pBall4.innerHTML = `<p>${playerBall4}</p>`;
-    pBall5.innerHTML = `<p>${playerBall5}</p>`;
-    pBall6.innerHTML = `<p>${playerBall6}</p>`;
+    pBall1.innerHTML = `<p class="holder">${playerBall1}</p>`;
+    pBall2.innerHTML = `<p class="holder">${playerBall2}</p>`;
+    pBall3.innerHTML = `<p class="holder">${playerBall3}</p>`;
+    pBall4.innerHTML = `<p class="holder">${playerBall4}</p>`;
+    pBall5.innerHTML = `<p class="holder">${playerBall5}</p>`;
+    pBall6.innerHTML = `<p class="holderP">${playerBall6}</p>`;
 
     //player money
     const playerMoneyEl = document.getElementById("playMoney");
     playerMoney-=2;
     playerMoney+=prize;
-    playerMoneyEl.innerHTML = `Player Money: ${playerMoney}`;
+    playerMoneyEl.innerHTML = `Player Money: $${playerMoney}`;
     
 }
 
@@ -130,6 +130,10 @@ const reset = () => {
     const playBall5 = document.getElementById("pnum5");
     const playBall6 = document.getElementById("pnum6");
 
+    //wins clear
+    const wins = document.getElementById("winsId");
+    wins.innerHTML = `<h2 class="winsHeading">Wins:</h2>`;
+
     pball1.disabled = false;
     pball2.disabled = false;
     pball3.disabled = false;
@@ -145,21 +149,25 @@ const reset = () => {
     pball6.value = '';
 
     //displaying rolled balls
-    ball1.innerHTML = `<p>-</p>`;
-    ball2.innerHTML = `<p>-</p>`;
-    ball3.innerHTML = `<p>-</p>`;
-    ball4.innerHTML = `<p>-</p>`;
-    ball5.innerHTML = `<p>-</p>`;
-    ball6.innerHTML = `<p>-</p>`;
+    ball1.innerHTML = `<p class="holder"></p>`;
+    ball2.innerHTML = `<p class="holder"></p>`;
+    ball3.innerHTML = `<p class="holder"></p>`;
+    ball4.innerHTML = `<p class="holder"></p>`;
+    ball5.innerHTML = `<p class="holder"></p>`;
+    ball6.innerHTML = `<p class="holderP"></p>`;
 
     //displaying player balls
-    playBall1.innerHTML = `<p>-</p>`;
-    playBall2.innerHTML = `<p>-</p>`;
-    playBall3.innerHTML = `<p>-</p>`;
-    playBall4.innerHTML = `<p>-</p>`;
-    playBall5.innerHTML = `<p>-</p>`;
-    playBall6.innerHTML = `<p>-</p>`;
+    playBall1.innerHTML = `<p class="holder"></p>`;
+    playBall2.innerHTML = `<p class="holder"></p>`;
+    playBall3.innerHTML = `<p class="holder"></p>`;
+    playBall4.innerHTML = `<p class="holder"></p>`;
+    playBall5.innerHTML = `<p class="holder"></p>`;
+    playBall6.innerHTML = `<p class="holderP"></p>`;
 
+    //player money
+    playerMoney = 100;
+    const playerMoneyEl = document.getElementById("playMoney");
+    playerMoneyEl.innerHTML = `Player Money: $${playerMoney}`;
     playerBalls = [];
 }
 
@@ -196,6 +204,7 @@ const prizeChecker = (powerballArr, playerArr) => {
     powerballArr = powerballArr.map(Number);
     playerArr = playerArr.map(Number);
     const wins = document.getElementById("winsId");
+    const placeholder = document.getElementById("empty");
 
     //checks normal balls
     for(i=0; i < 5; i++) {
@@ -211,6 +220,7 @@ const prizeChecker = (powerballArr, playerArr) => {
             matches+=1;
         }
     }
+    
 
     //checks power ball
     if (powerballArr[5] === playerArr[5]) {
