@@ -190,7 +190,7 @@ const checkNumber = () => {
     let duplicateChecker = checkIfDuplicateExists(arrMinusPball);
 
     if (duplicateChecker === true) {
-        alert("You done put in a duplicate number. READ THE RULES!");
+        alert("You done put in a duplicate number or left empties. READ THE RULES!");
         reset();
     }
 
