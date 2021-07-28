@@ -94,3 +94,84 @@ body {
     line-height: 70px;
     color: white;
 }
+
+.ballsInput {
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+}
+
+.lockIn {
+    box-shadow:inset 0px 1px 0px 0px #f5978e;
+	background:linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
+	background-color:#f24537;
+	border-radius:6px;
+	border:1px solid #d02718;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 14px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #810e05;
+}
+
+.lockIn:hover {
+	background:linear-gradient(to bottom, #943026 5%, #f24537 100%);
+	background-color:#c62d1f;
+}
+.lockIn:active {
+	position:relative;
+	top:1px;
+
+}
+
+.playbtn {
+	box-shadow: 0px 10px 14px -7px #3e7327;
+	background:linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
+	background-color:#77b55a;
+	border-radius:4px;
+	border:1px solid #4b8f29;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:7px 20px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #5b8a3c;
+}
+.playbtn:hover {
+	background:linear-gradient(to bottom, #589639 5%, #77b55a 100%);
+	background-color:#72b352;
+}
+.playbtn:active {
+	position:relative;
+	top:1px;
+}
+
+.resetbtn {
+	box-shadow: 0px 11px 14px -7px #7a7a7a;
+	background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+	background-color:#ffec64;
+	border-radius:6px;
+	border:1px solid #ffaa22;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:7px 20px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffee66;
+}
+.resetbtn:hover {
+	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+	background-color:#ffab23;
+}
+.resetbtn:active {
+	position:relative;
+	top:1px;
+}
