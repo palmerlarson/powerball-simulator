@@ -173,15 +173,30 @@ const reset = () => {
 
 const checkNumber = () => {
     for(let i=0; i < 5; i++) {
-        if (playerBalls[i] < 1 || playerBalls[i] > 69) {
-            alert("You can't have a number less than 1 or greater than 69 in your first 5 balls. READ THE RULES!");
-            reset();
+        if (playerBalls[i] === '') {
+            playerBalls[i] = getBallNumber();
+            console.log(playerBalls[i]);
         }
     }
 
-    if (playerBalls[5] < 1 || playerBalls[5] > 26) {
-        alert("You can't have a number less than 1 or more than 26 for you powerball. READ THE RULES!");
-        reset();
+    if (playerBalls[5] === '') {
+        playerBalls[5] = getPowerBallNumber();
+    }
+
+    for(let i=0; i < 5; i++) {
+        if (typeof playerBalls[i] != "undefined") {
+            if (playerBalls[i] < 1 || playerBalls[i] > 69) {
+                alert("You can't have a number less than 1 or greater than 69 in your first 5 balls. READ THE RULES!");
+                reset();
+            }
+        }
+    }
+
+    if (typeof playerBalls[5] !== "undefined") {
+        if (playerBalls[5] < 1 || playerBalls[5] > 26) {
+            alert("You can't have a number less than 1 or more than 26 for you powerball. READ THE RULES!");
+            reset();
+        }
     }
 
     //a primitive way of finding dupes lol
